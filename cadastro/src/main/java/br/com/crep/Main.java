@@ -96,31 +96,6 @@ public class Main {
         }
     }
 
-// Pesquisando Usuários
-   /* 
-        System.out.println("\n=== Opção desejada: Pesquisar Usuário ===");
-
-        UsuariosDAO usuarioDAO = new UsuariosDAO();
-
-        try{
-            List<Usuarios> usuario = usuarioDAO.buscarTodosUsuarios();
-            if (usuario != null && !usuario.isEmpty()) {
-                System.out.println("Lista de usuários:");
-
-                for (Usuarios usuarios : usuario) {
-                    System.out.println("Nome: "+usuarios.nome() + ", CPF: "+usuarios.cpf());
-                }
-                System.out.println("===   Usuários encontrados com sucesso   ===");
-            } else {
-                System.err.println("===   Usuário não encontrado   ===");
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-            System.err.println("\n===   Erro ao pesquisar usuário   ===\n\n");
-        }
-        
-    }
-*/
     // Em caso de string após INT
     private static void buffer(){
         String limparBuffer = sc.nextLine();
