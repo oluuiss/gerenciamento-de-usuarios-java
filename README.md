@@ -13,7 +13,6 @@ utilizando JDBC <a href="https://www.oracle.com/br/database/technologies/faq-jdb
   
 # 🗂️ Clonando repositório
 ```
-bash
 git clone https://github.com/oluuiss/gerenciamento-de-usuarios-java.git
 ```
 

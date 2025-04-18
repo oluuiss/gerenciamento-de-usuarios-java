@@ -60,7 +60,9 @@ public class Main {
             System.err.println("\n===   Erro ao cadastrar usuário   ===\n\n");
         }
     }
-/*
+
+
+    /*
     private static void pesquisarUsuario(){
         Usuarios Usuarios = new Usuarios();
         try {
