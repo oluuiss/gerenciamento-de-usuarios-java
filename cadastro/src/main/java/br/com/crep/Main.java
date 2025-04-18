@@ -1,5 +1,6 @@
 package br.com.crep;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -10,8 +11,9 @@ public class Main {
         while (true) {
             System.out.println("\n=== Selecione a opção desejada ===");
             System.out.println("1 - Cadastrar Usuário");
-            System.out.println("2 - Remover Usuário");
-            System.out.println("3 - Pesquisar Usuário");
+            System.out.println("2 - Todos usuários");
+            System.out.println("3 - Pesquisar por CPF");
+            System.out.println("4 - Remover usuário");
             System.out.println("0 - Sair");
             System.out.print("Opção desejada: ");
             int opcoes = Integer.parseInt(sc.nextLine());
@@ -23,10 +25,15 @@ public class Main {
 
                 case 1:
                     cadastrarUsuario();
+                    break;
+
+                case 2:
+                    pesquisarTodosUsuarios();
             }
         }
     }
 
+// Cadastro de usuários
     private static void cadastrarUsuario(){
         // ========================= Dados pessoais =========================
         System.out.println("\n=== Opção desejada: Cadastrar Usuário ===");
@@ -61,24 +68,59 @@ public class Main {
         }
     }
 
-
-    /*
-    private static void pesquisarUsuario(){
-        Usuarios Usuarios = new Usuarios();
+    private static void pesquisarTodosUsuarios() {
+        System.out.println("\n=== Opção desejada: Pesquisar Usuário ===");
+    
+        UsuariosDAO usuarioDAO = new UsuariosDAO();
+    
         try {
-            List<DadosPessoais> dp = Usuarios.pesquisar();
-
-            if(dp != null){
+            List<Usuarios> usuarios = usuarioDAO.buscarTodosUsuarios();
+            
+            // Verifica se a lista está vazia em vez de nula
+            if (usuarios != null && !usuarios.isEmpty()) {
                 System.out.println("Lista de usuários:");
+                
+                for (Usuarios usuario : usuarios) {
+                    // Adicione verificação nula para cada usuário
+                    if (usuario != null) {
+                        System.out.println("Nome: " + usuario.nome() + ", CPF: " + usuario.cpf());
+                    }
+                }
+                System.out.println("\n===   Usuários encontrados com sucesso   ===");
+            } else {
+                System.err.println("\n===   Nenhum usuário encontrado   ===");
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             System.err.println("\n===   Erro ao pesquisar usuário   ===\n\n");
         }
     }
-    */
 
+// Pesquisando Usuários
+   /* 
+        System.out.println("\n=== Opção desejada: Pesquisar Usuário ===");
+
+        UsuariosDAO usuarioDAO = new UsuariosDAO();
+
+        try{
+            List<Usuarios> usuario = usuarioDAO.buscarTodosUsuarios();
+            if (usuario != null && !usuario.isEmpty()) {
+                System.out.println("Lista de usuários:");
+
+                for (Usuarios usuarios : usuario) {
+                    System.out.println("Nome: "+usuarios.nome() + ", CPF: "+usuarios.cpf());
+                }
+                System.out.println("===   Usuários encontrados com sucesso   ===");
+            } else {
+                System.err.println("===   Usuário não encontrado   ===");
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+            System.err.println("\n===   Erro ao pesquisar usuário   ===\n\n");
+        }
+        
+    }
+*/
     // Em caso de string após INT
     private static void buffer(){
         String limparBuffer = sc.nextLine();

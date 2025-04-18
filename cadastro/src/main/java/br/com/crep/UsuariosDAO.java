@@ -1,6 +1,9 @@
 package br.com.crep;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuariosDAO {
     public void save(Usuarios usuarios) throws Exception {
@@ -23,30 +26,33 @@ public class UsuariosDAO {
             throw new Exception(e);
         }
     }
-}
-    /*
 
-    public List<DadosPessoais> pesquisar() throws Exception {
-        String sql = "SELECT * FROM USUARIOS";
-        List<DadosPessoais> dados = new ArrayList<>();
-
-        try (Connection con = conDataBase.obterConexao();
-             PreparedStatement stmt = con.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
-
-            while (rs.next()) {
-                DadosPessoais dp = new DadosPessoais(
-                        rs.getLong("idusuarios"),
-                        rs.getString("nome"),
-                        rs.getString("cpf")
-                );
-                dados.add(dp);
+    public List<Usuarios> buscarTodosUsuarios() throws Exception {
+        var sql = "SELECT * FROM usuarios";
+        
+        List<Usuarios> listaUsuarios = new ArrayList<>();
+    
+        try (var connection = ConDataBase.obterConexao();
+                 var stmt = connection.prepareStatement(sql)) {
+    
+                    try (ResultSet rs = stmt.executeQuery()){
+                        while (rs.next()) {
+                            Usuarios usuarios = new Usuarios(rs.getString("nome"),
+                            rs.getString("cpf"),
+                            rs.getInt("dia"),
+                            rs.getInt("mes"),
+                            rs.getInt("ano"),
+                            rs.getString("escolaridade"),
+                            rs.getString("genero"),
+                            rs.getString("etnia"));
+    
+                            listaUsuarios.add(usuarios);
+                        }
+                    }
+    
+            } catch (SQLException e) {
+                throw new Exception(e);
             }
-        } catch (SQLException e) {
-            throw new Exception(e);
-        }
-        return dados;
+            return listaUsuarios;
     }
-} -> class usuarios
-
-*/
+}
