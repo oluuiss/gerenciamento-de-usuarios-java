@@ -1,0 +1,30 @@
+{
+	"nodes":[
+		{"id":"c7df20ab91e87e8b","type":"text","text":"ResultSet","x":-580,"y":-400,"width":250,"height":60,"color":"4"},
+		{"id":"cbde5312151b2a59","type":"text","text":"Statement","x":-580,"y":-280,"width":250,"height":60,"color":"4"},
+		{"id":"096617a5cfd90e12","type":"text","text":"ResultSet","x":80,"y":-400,"width":250,"height":60,"color":"4"},
+		{"id":"02b346ec9c9eab77","type":"text","text":"PrepareStatement","x":80,"y":-280,"width":250,"height":60,"color":"4"},
+		{"id":"3b129dd4dfbc8d6e","type":"text","text":"Connection","x":-240,"y":-140,"width":250,"height":60,"color":"4"},
+		{"id":"a13dc90d6056f9fb","type":"text","text":"DriverManager","x":-240,"y":-20,"width":250,"height":60,"color":"1"},
+		{"id":"ecdb477e30145a00","type":"text","text":"MySQL Driver","x":-580,"y":130,"width":250,"height":60,"color":"1"},
+		{"id":"a27f10eb17efc930","type":"text","text":"SQLite Driver","x":80,"y":130,"width":250,"height":60,"color":"1"},
+		{"id":"3408865ed83538e1","type":"text","text":"Oracle Driver","x":-240,"y":130,"width":250,"height":60,"color":"1"},
+		{"id":"42a0f963baf64bbb","type":"text","text":"MySQL Database","x":-580,"y":240,"width":250,"height":60,"color":"6"},
+		{"id":"b84be945090d95b7","type":"text","text":"Oracle Driver","x":-240,"y":240,"width":250,"height":60,"color":"6"},
+		{"id":"d762e06e85982dc9","type":"text","text":"SQLite Driver","x":80,"y":240,"width":250,"height":60,"color":"6"},
+		{"id":"252e7bfb49eebb04","x":-280,"y":-430,"width":330,"height":210,"color":"#ffffff","type":"text","text":"Arquitetura do JDBC, desenvolvedores usam apenas a parte connection. O drive manager não tocamos nela, é o gerenciador de drives, caso queira conectar em algum banco de dados, buscamos os respectivos."}
+	],
+	"edges":[
+		{"id":"df890eaf1adeb806","fromNode":"c7df20ab91e87e8b","fromSide":"bottom","toNode":"cbde5312151b2a59","toSide":"top"},
+		{"id":"20f22cd4cd7bc61e","fromNode":"096617a5cfd90e12","fromSide":"bottom","toNode":"02b346ec9c9eab77","toSide":"top"},
+		{"id":"30d1fd39c763ec04","fromNode":"02b346ec9c9eab77","fromSide":"bottom","toNode":"3b129dd4dfbc8d6e","toSide":"right"},
+		{"id":"4dd1426ab7983c83","fromNode":"cbde5312151b2a59","fromSide":"bottom","toNode":"3b129dd4dfbc8d6e","toSide":"left"},
+		{"id":"6b431e73294af536","fromNode":"3b129dd4dfbc8d6e","fromSide":"bottom","toNode":"a13dc90d6056f9fb","toSide":"top"},
+		{"id":"8131958731b28964","fromNode":"a13dc90d6056f9fb","fromSide":"bottom","toNode":"3408865ed83538e1","toSide":"top"},
+		{"id":"05ebba2bb92b8a88","fromNode":"a13dc90d6056f9fb","fromSide":"left","toNode":"ecdb477e30145a00","toSide":"top"},
+		{"id":"2f023e6edc8c42db","fromNode":"a13dc90d6056f9fb","fromSide":"right","toNode":"a27f10eb17efc930","toSide":"top"},
+		{"id":"64530c5b614e01de","fromNode":"ecdb477e30145a00","fromSide":"bottom","toNode":"42a0f963baf64bbb","toSide":"top"},
+		{"id":"7ebe623620e4be49","fromNode":"3408865ed83538e1","fromSide":"bottom","toNode":"b84be945090d95b7","toSide":"top"},
+		{"id":"797a9c2aa372bc4d","fromNode":"a27f10eb17efc930","fromSide":"bottom","toNode":"d762e06e85982dc9","toSide":"top"}
+	]
+}

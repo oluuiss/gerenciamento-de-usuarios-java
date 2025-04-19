@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "f37b88009b9b530a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6ad75fc323be05d6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2e1f03b3b261995f",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "04 - Classes e interfaces.canvas",
+                "viewState": {
+                  "x": -125,
+                  "y": -80,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "04 - Classes e interfaces"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b54efdec890be237",
+    "type": "split",
+    "children": [
+      {
+        "id": "b7177f2f5dfa8324",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7d9e635db1484770",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "55920d48706ad148",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "7ec37b4452ceefa0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fc2063db3e3207c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "bf0d18210df2f618",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab5a5dc52bdc46f5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "04 - Classes e interfaces.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos para 04 - Classes e interfaces"
+            }
+          },
+          {
+            "id": "72bb7b38bb59122b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "04 - Classes e interfaces.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída para 04 - Classes e interfaces"
+            }
+          },
+          {
+            "id": "c046c30623d8e6cd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1f702696c395a065",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "04 - Classes e interfaces.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário de 04 - Classes e interfaces"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "2e1f03b3b261995f",
+  "lastOpenFiles": [
+    "03 - Arquitetura do JDBC.canvas",
+    "02 - JDBC.canvas",
+    "01 - Introdução.canvas",
+    "04 - Classes e interfaces.canvas",
+    "Bem-vindo.md"
+  ]
+}

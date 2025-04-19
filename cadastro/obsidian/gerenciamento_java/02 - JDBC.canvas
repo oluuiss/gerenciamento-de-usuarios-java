@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"7bbf321c54853eae","type":"text","text":"MySQL","x":-340,"y":-120,"width":140,"height":60,"color":"#006394"},
+		{"id":"f7538f73c5ab12ac","type":"text","text":"SQLite","x":140,"y":-120,"width":140,"height":60,"color":"5"},
+		{"id":"3043aa9922653986","type":"text","text":"SQLite","x":738,"y":260,"width":140,"height":60,"color":"5"},
+		{"id":"442515e94eebfe99","type":"text","text":"MySQL","x":258,"y":260,"width":140,"height":60,"color":"#006394"},
+		{"id":"9a0143f403edeae3","type":"text","text":"Oracle","x":-100,"y":-120,"width":140,"height":60,"color":"1"},
+		{"id":"a6fb0f0881266703","type":"text","text":"Projeto","x":-100,"y":-300,"width":140,"height":60,"color":"6"},
+		{"id":"420a973d66b79c33","type":"text","text":"Projeto","x":498,"y":-60,"width":140,"height":60,"color":"6"},
+		{"id":"9d2dccbbc04eca89","type":"text","text":"JDBC","x":498,"y":60,"width":140,"height":60,"color":"4"},
+		{"id":"88d9793cbfc601f9","type":"text","text":"Oracle","x":498,"y":260,"width":140,"height":60,"color":"1"},
+		{"id":"9c209c7d4db20fba","type":"text","text":"Para não quebrar a cabeça nessa coneção com SQL e banco de dados, utilizamos o JDBC, que já faz essa ponte, facilitando bastante.","x":421,"y":-390,"width":295,"height":180,"color":"#ffffff"}
+	],
+	"edges":[
+		{"id":"a1edc7013a0b4537","fromNode":"a6fb0f0881266703","fromSide":"bottom","toNode":"7bbf321c54853eae","toSide":"top"},
+		{"id":"f72f701119b75fe6","fromNode":"a6fb0f0881266703","fromSide":"bottom","toNode":"9a0143f403edeae3","toSide":"top"},
+		{"id":"324e5f4d5d970204","fromNode":"a6fb0f0881266703","fromSide":"bottom","toNode":"f7538f73c5ab12ac","toSide":"top"},
+		{"id":"12c307485a84df07","fromNode":"420a973d66b79c33","fromSide":"bottom","toNode":"9d2dccbbc04eca89","toSide":"top"},
+		{"id":"988e1bb7c7809e7d","fromNode":"9d2dccbbc04eca89","fromSide":"bottom","toNode":"442515e94eebfe99","toSide":"top"},
+		{"id":"1cfefca551b471b0","fromNode":"9d2dccbbc04eca89","fromSide":"bottom","toNode":"88d9793cbfc601f9","toSide":"top"},
+		{"id":"1c2a360c5fe5b95c","fromNode":"9d2dccbbc04eca89","fromSide":"bottom","toNode":"3043aa9922653986","toSide":"top"},
+		{"id":"b3ab69596aaddb26","fromNode":"9c209c7d4db20fba","fromSide":"left","toNode":"a6fb0f0881266703","toSide":"top"},
+		{"id":"83d5acaa8530eab6","fromNode":"9c209c7d4db20fba","fromSide":"bottom","toNode":"420a973d66b79c33","toSide":"top"}
+	]
+}

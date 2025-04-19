@@ -86,6 +86,7 @@ public class Main {
                         System.out.println("Nome: " + usuario.nome() + ", CPF: " + usuario.cpf());
                     }
                 }
+                System.out.println("Usuários cadastrados: "+ usuarios.size());
                 System.out.println("\n===   Usuários encontrados com sucesso   ===");
             } else {
                 System.err.println("\n===   Nenhum usuário encontrado   ===");
