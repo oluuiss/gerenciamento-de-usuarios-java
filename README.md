@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/Estado-Em%20processo-yellow?style=plastic&labelColor=555" alt="Estado em processo">
+
 # 📋 Cadastro e Gerenciamento de usuários em Java.
 
 <div>
