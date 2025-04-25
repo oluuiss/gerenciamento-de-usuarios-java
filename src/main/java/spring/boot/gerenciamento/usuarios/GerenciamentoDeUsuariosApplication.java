@@ -1,19 +1,19 @@
 package spring.boot.gerenciamento.usuarios;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
-public class Main {
+public class GerenciamentoDeUsuariosApplication {
     private static Scanner sc = new Scanner(System.in);
 
     // Menu com opções para usuário
     private static void opcao(){
         while (true) {
-            System.out.println("\n=== Selecione a opção desejada ===");
+            System.out.println("\n==    Selecione a opção desejada    ==");
             System.out.println("1 - Cadastrar Usuário");
             System.out.println("2 - Todos usuários");
             System.out.println("3 - Pesquisar por CPF");
@@ -45,8 +45,8 @@ public class Main {
         System.out.print("Nome: "); 
         String nome = sc.nextLine(); // Nome
         ValidarString(nome);
-        System.out.print("Cadastro Pessoa Fisica (CPF): "); 
-        String cpf = sc.nextLine(); // CPF
+        System.out.print("Cadastro Pessoa Fisica (CPF (Apenas números)): "); 
+        Long cpf = sc.nextLong(); // CPF
         System.out.print("Dia de nascimento: ");
         int dia = sc.nextInt(); // Dia
         System.out.print("Mês de nascimento: ");
@@ -77,19 +77,19 @@ public class Main {
     }
 
     private static void pesquisarTodosUsuarios() {
-        System.out.println("\n=== Opção desejada: Pesquisar Usuário ===");
+        System.out.println("\n=== Opção desejada: Pesquisar Todos Usuários ===");
     
         UsuariosDAO usuarioDAO = new UsuariosDAO();
     
         try {
             List<Usuarios> usuarios = usuarioDAO.buscarTodosUsuarios();
             
-            // Verifica se a lista está vazia em vez de nula
+            // verifica se a lista está vazia em vez de nula
             if (usuarios != null && !usuarios.isEmpty()) {
                 System.out.println("Lista de usuários:");
                 
                 for (Usuarios usuario : usuarios) {
-                    // Adicione verificação nula para cada usuário
+                    // adicione verificação nula para cada usuário
                     if (usuario != null) {
                         System.out.println("Nome: " + usuario.nome() + ", CPF: " + usuario.cpf());
                     }
@@ -130,6 +130,7 @@ public class Main {
     }
 */
     public static void main(String[] args) {
+        System.out.println("===   Sistema de Gerenciamento de Usuários   ===\n\n");
         opcao();
     }
 }

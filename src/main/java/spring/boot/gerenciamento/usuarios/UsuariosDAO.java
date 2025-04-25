@@ -13,7 +13,7 @@ public class UsuariosDAO {
              var stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, usuarios.nome());
-            stmt.setString(2, usuarios.cpf());
+            stmt.setLong(2, usuarios.cpf());
             stmt.setInt(3, usuarios.dia());
             stmt.setInt(4, usuarios.mes());
             stmt.setInt(5, usuarios.ano());
@@ -38,7 +38,7 @@ public class UsuariosDAO {
                     try (ResultSet rs = stmt.executeQuery()){
                         while (rs.next()) {
                             Usuarios usuarios = new Usuarios(rs.getString("nome"),
-                            rs.getString("cpf"),
+                            rs.getLong("cpf"),
                             rs.getInt("dia"),
                             rs.getInt("mes"),
                             rs.getInt("ano"),
