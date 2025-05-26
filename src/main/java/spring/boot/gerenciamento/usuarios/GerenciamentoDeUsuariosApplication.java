@@ -45,8 +45,16 @@ public class GerenciamentoDeUsuariosApplication {
         System.out.print("Nome: "); 
         String nome = sc.nextLine(); // Nome
         ValidarString(nome);
-        System.out.print("Cadastro Pessoa Fisica (CPF (Apenas números)): "); 
-        Long cpf = sc.nextLong(); // CPF
+        Long cpf = null;
+        while (cpf == null) {
+            System.out.print("Cadastro Pessoa Fisica (CPF - Apenas números): ");
+            String cpfInput = sc.nextLine();
+            if (validarCPF(cpfInput)) {
+                cpf = Long.parseLong(cpfInput);
+            } else {
+                System.err.println("CPF deve conter exatamente 11 dígitos numéricos. Tente novamente.");
+            }
+        }
         System.out.print("Dia de nascimento: ");
         int dia = sc.nextInt(); // Dia
         System.out.print("Mês de nascimento: ");
@@ -105,30 +113,26 @@ public class GerenciamentoDeUsuariosApplication {
         }
     }
 
-    // Em caso de string após INT
+    // em caso de string após INT
     private static void buffer(){
         String limparBuffer = sc.nextLine();
     }
 
-    // Validação de string
+    // validação de string
+    // validação de nome (apenas letras e espaços)
     private static void ValidarString(String validarString) {
-        if (!validarString.matches("^[A-Za-z]+( [A-Za-z]+)*$")) {
-           /* for(){
-                System.err.println("Erro: Digite apenas letras com um espaço entre os nomes. Ex: 'Luis Gustavo'");
-                System.out.println("Nome: ");
-                String nome = sc.nextLine();
-               // cadastrarUsuario();
-            }*/
+        if (!validarString.matches("^[A-Za-zÀ-ú]+( [A-Za-zÀ-ú]+)*$")) {
+            System.err.println("Digite apenas letras com um espaço entre os nomes. Ex: 'Luis Porto'");
+            System.out.print("Nome: ");
+            String novoNome = sc.nextLine();
+            ValidarString(novoNome); // Chama recursivamente até ser válido
         }
     }
-/* 
-    private static void ValidarCPF(int validarCPF) {
-
-        if (validarCPF.matches("^\\d{11}$")) {
-
-        }
+    // validação de CPF (11 dígitos)
+    private static boolean validarCPF(String cpf) {
+        return cpf.matches("^\\d{11}$"); // verifica se tem exatamente 11 dígitos
     }
-*/
+
     public static void main(String[] args) {
         System.out.println("===   Sistema de Gerenciamento de Usuários   ===\n\n");
         opcao();
