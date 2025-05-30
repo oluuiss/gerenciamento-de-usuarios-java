@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Estado-Em%20processo-yellow?style=plastic&labelColor=555" alt="Estado em processo">
+<img src="https://img.shields.io/badge/Estado-Concluído-brightgreen?style=plastic&labelColor=555" alt="Estado concluído">
 
 # 📋 Cadastro e Gerenciamento de usuários em Java.
 
