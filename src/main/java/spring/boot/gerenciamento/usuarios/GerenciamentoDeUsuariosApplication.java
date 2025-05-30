@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GerenciamentoDeUsuariosApplication {
     private static Scanner sc = new Scanner(System.in);
 
-    // Menu com opções para usuário
+    // menu
     private static void opcao(){
         while (true) {
             System.out.println("\n==    Selecione a opção desejada    ==");
@@ -33,11 +33,20 @@ public class GerenciamentoDeUsuariosApplication {
 
                 case 2:
                     pesquisarTodosUsuarios();
+                    break;
+
+                case 3:
+                    pesquisarPorCPF();
+                    break;
+
+                case 4:
+                    removerUsuario();
+                    break;
             }
         }
     }
 
-// Cadastro de usuários
+// cadastrar usuário
     private static void cadastrarUsuario(){
         // ========================= Dados pessoais =========================
         System.out.println("\n=== Opção desejada: Cadastrar Usuário ===");
@@ -84,6 +93,7 @@ public class GerenciamentoDeUsuariosApplication {
        
     }
 
+    // pesquisa de todos
     private static void pesquisarTodosUsuarios() {
         System.out.println("\n=== Opção desejada: Pesquisar Todos Usuários ===");
     
@@ -113,19 +123,98 @@ public class GerenciamentoDeUsuariosApplication {
         }
     }
 
+    // pesquisa por CPF
+    private static void pesquisarPorCPF() {
+        System.out.println("\n=== Opção desejada: Pesquisar por CPF ===");
+        System.out.print("Digite o CPF (apenas números): ");
+        String cpfInput = sc.nextLine();
+
+        if (!validarCPF(cpfInput)) {
+            System.err.println("\nCPF inválido. Deve conter exatamente 11 dígitos numéricos.");
+            return;
+        }
+
+        Long cpf = Long.parseLong(cpfInput);
+        UsuariosDAO usuarioDAO = new UsuariosDAO();
+
+        try {
+            Usuarios usuario = usuarioDAO.buscarPorCPF(cpf);
+
+            if (usuario != null) {
+                System.out.println("\n=== Usuário encontrado ===");
+                System.out.println("Nome: " + usuario.nome());
+                System.out.println("CPF: " + usuario.cpf());
+                System.out.println("Data de Nascimento: " + usuario.dia() + "/" + usuario.mes() + "/" + usuario.ano());
+                System.out.println("Gênero: " + usuario.genero());
+                System.out.println("Etnia/Raça: " + usuario.etnia());
+                System.out.println("Escolaridade: " + usuario.escolaridade());
+                System.out.println("\n===   Pesquisa concluída com sucesso   ===");
+            } else {
+                System.err.println("\n===   Nenhum usuário encontrado com este CPF   ===");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("\n===   Erro ao pesquisar usuário   ===\n\n");
+        }
+    }
+
+    // remover usuário
+    private static void removerUsuario() {
+        System.out.println("\n=== Opção desejada: Remover Usuário ===");
+        System.out.print("Digite o CPF do usuário a ser removido (apenas números): ");
+        String cpfInput = sc.nextLine();
+
+        if (!validarCPF(cpfInput)) {
+            System.err.println("CPF inválido. Deve conter exatamente 11 dígitos numéricos.");
+            return;
+        }
+
+        Long cpf = Long.parseLong(cpfInput);
+        UsuariosDAO usuarioDAO = new UsuariosDAO();
+
+        try {
+            // Verifica se o usuário existe antes de remover
+            Usuarios usuario = usuarioDAO.buscarPorCPF(cpf);
+            if (usuario == null) {
+                System.err.println("\n===   Nenhum usuário encontrado com este CPF   ===");
+                return;
+            }
+
+            // Confirmação antes de remover
+            System.out.println("\nUsuário encontrado:");
+            System.out.println("Nome: " + usuario.nome());
+            System.out.println("CPF: " + usuario.cpf());
+            System.out.print("\nTem certeza que deseja remover este usuário? (S/N): ");
+            String confirmacao = sc.nextLine().toUpperCase();
+
+            if (confirmacao.equals("S")) {
+                boolean removido = usuarioDAO.removerUsuario(cpf);
+                if (removido) {
+                    System.out.println("\n===   Usuário removido com sucesso   ===");
+                } else {
+                    System.err.println("\n===   Falha ao remover usuário   ===");
+                }
+            } else {
+                System.out.println("\nOperação cancelada.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("\n===   Erro ao remover usuário   ===\n\n");
+        }
+    }
+
     // em caso de string após INT
     private static void buffer(){
         String limparBuffer = sc.nextLine();
     }
 
-    // validação de string
     // validação de nome (apenas letras e espaços)
     private static void ValidarString(String validarString) {
         if (!validarString.matches("^[A-Za-zÀ-ú]+( [A-Za-zÀ-ú]+)*$")) {
             System.err.println("Digite apenas letras com um espaço entre os nomes. Ex: 'Luis Porto'");
             System.out.print("Nome: ");
             String novoNome = sc.nextLine();
-            ValidarString(novoNome); // Chama recursivamente até ser válido
+            ValidarString(novoNome); // chama recursivamente até ser válido
         }
     }
     // validação de CPF (11 dígitos)
